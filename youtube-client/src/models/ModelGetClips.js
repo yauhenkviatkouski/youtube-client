@@ -1,6 +1,6 @@
 export default function getClips(userRequest, slider) {
-  const keyClips = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyBP9dFZ-uPuT-0ze6P2ArkkKzitTK9J7gA&type=video&part=snippet&maxResults=15&q=';
-  const keyStatistics1 = 'https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBP9dFZ-uPuT-0ze6P2ArkkKzitTK9J7gA&id=';
+  const keyClips = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAyhNGku3GEhkUt7r1tI_PsILhndMaxOLs&type=video&part=snippet&maxResults=15&q=';
+  const keyStatistics1 = 'https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAyhNGku3GEhkUt7r1tI_PsILhndMaxOLs&id=';
   const keyStatistics2 = '&part=snippet,statistics';
   const arrayClips = [];
   fetch(keyClips + userRequest)
