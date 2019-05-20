@@ -12,12 +12,5 @@ export default class Controller {
         moveSlider(userRequest);
       }
     });
-    document.querySelector('input').addEventListener('keydown', () => {
-      setTimeout(() => {
-        const userRequest = document.querySelector('input').value;
-        ViewSlider();
-        moveSlider(userRequest);
-      }, 1000);
-    });
   }
 }
