@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100vw;
+}
+
+.slider {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: transform 0.2s;
+  will-change: transform;
+  user-select: none;
+}
+
+.clip-wrapper {
+  margin-top: 50px;
+  min-width: calc(100vw/1);
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+  .clip-wrapper {min-width: calc(100vw/2);}
+  }
+
+@media screen and (min-width: 1000px) {
+  .clip-wrapper {min-width: calc(100vw/3);}
+  }
+
+@media screen and (min-width: 1320px) {
+  .clip-wrapper {min-width: calc(100vw/4);}
+}
+
+.clip {
+  width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.clip-picture {
+  position: absolute;
+  margin: 10px 0px;
+  max-height: 180px;
+  }
+
+.link {
+  position: absolute;
+  width: 320px;
+  margin-top: 50px;
+  font-size: 1.3rem;
+  background: rgba(230, 214, 0, 0.85);
+  z-index: 1;
+  text-align: center;
+}
+
+h4 {
+  margin: 8px 20px;
+  width: 250px;
+  text-align: center;
+}
+
+h4:first-child {
+  margin: 8px 20px;
+  width: 250px;
+}
+
+.author {
+  margin-top: 200px;
+}
+
+.author:before {
+  content: '\1F464';
+  left: -23px;
+  position: relative;
+}
+
+.date:before {
+  content: '\1F4C6';
+  left: -23px;
+  position: relative;
+}
+
+.views:before {
+  content: '\1F441';
+  left: -23px;
+  position: relative;
+}
+
+.description {
+  width: 306px;
+  overflow: hidden;
+  max-height: 145px;
+  text-overflow: ellipsis;
+  padding-right: 14px;
+  padding-left: 14px;
+  text-overflow: ellipsis;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons .next, .buttons .previous {
+  height: 30px;
+  width: 30px;
+  margin: 18px;
+  position: relative;
+}
+
+.buttons div {
+  margin: 20px;
+  height: 30px;
+  width: 30px;
+  background-color: rgb(223, 210, 39);
+  border-radius: 15px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.next .tip, .previous .tip {
+  position: absolute;
+  top: -47px;
+  left: -18px;
+  font-size: 17px;
+  height: 20px;
+  width: 20px;
+}

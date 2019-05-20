@@ -1,5 +1,6 @@
 import ViewStart from '../views/AppViews/ViewStart';
-import ModelRequest from '../models/Model';
+import ViewSlider from '../views/AppViews/ViewSlider';
+import moveSlider from '../views/AppViews/MoveSlider';
 
 export default class Controller {
   static start() {
@@ -7,8 +8,8 @@ export default class Controller {
     document.querySelector('input').addEventListener('keydown', (e) => {
       if (e.code === 'Enter') {
         const userRequest = document.querySelector('input').value;
-        const model = new ModelRequest(userRequest);
-        model.getClips();
+        ViewSlider();
+        moveSlider(userRequest);
       }
     });
   }
