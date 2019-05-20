@@ -29,7 +29,7 @@ export default function getClips(userRequest, slider) {
             clipWrapper.className = 'clip-wrapper';
             const clip = document.createElement('div');
             clip.className = 'clip';
-            clip.insertAdjacentHTML('beforeend', `<a class='link' href='${arrayClips[i].link}'>${arrayClips[i].title}</a>`);
+            clip.insertAdjacentHTML('beforeend', `<a href='${arrayClips[i].link}' class='link'>${arrayClips[i].title}</a>`);
             clip.insertAdjacentHTML('beforeend', `<img class='clip-picture' src='${arrayClips[i].picture}' alt='${arrayClips[i].title}' width='320'>`);
             clip.insertAdjacentHTML('beforeend', `<h4 class='author'>${arrayClips[i].author}</h4>`);
             clip.insertAdjacentHTML('beforeend', `<h4 class='date'>${arrayClips[i].date}</h4>`);

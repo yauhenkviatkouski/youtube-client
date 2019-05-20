@@ -1,4 +1,4 @@
-import getClips from '../../models/ModelGetClips';
+import getClips from './ModelGetClips';
 
 export default function moveSlider(userRequest) {
   const slider = document.querySelector('.slider');
@@ -26,12 +26,13 @@ export default function moveSlider(userRequest) {
     return 1;
   }
 
-  function handler() {
+  function mover() {
     if (walk >= 0 && clipNumber === 1) {
       pressed = false;
       slider.style.left = '';
       return;
     }
+
     if (walk > 0) {
       pressed = false;
       slider.style.left = '';
@@ -44,6 +45,7 @@ export default function moveSlider(userRequest) {
       document.querySelector('.number').innerHTML = `${pageNumber}`;
       newPosition = (document.querySelector(`.clip-wrapper:nth-child(${clipNumber})`).offsetLeft) || 0;
       slider.style.transform = `translate(-${newPosition}px)`;
+      walk = 0;
     }
     if (walk < 0) {
       pressed = false;
@@ -54,9 +56,10 @@ export default function moveSlider(userRequest) {
       document.querySelector('.number').innerHTML = `${pageNumber}`;
       newPosition = (document.querySelector(`.clip-wrapper:nth-child(${clipNumber})`).offsetLeft) || 0;
       slider.style.transform = `translate(-${newPosition}px)`;
-      if (document.querySelector(`.clip-wrapper:nth-child(${clipNumber + 8})`) === null) {
+      if (document.querySelector(`.clip-wrapper:nth-child(${clipNumber + 11})`) === null) {
         getClips(userRequest, slider);
       }
+      walk = 0;
     }
   }
 
@@ -74,11 +77,12 @@ export default function moveSlider(userRequest) {
   });
   slider.addEventListener('mouseleave', () => {
     if (!pressed) return;
-    handler();
+    mover();
   });
   slider.addEventListener('mouseup', (e) => {
+    pressed = false;
     e.preventDefault();
-    handler();
+    mover();
   });
   slider.addEventListener('mousemove', (e) => {
     if (!pressed) return;
@@ -91,9 +95,8 @@ export default function moveSlider(userRequest) {
     pressed = true;
     startX = e.touches[0].pageX;
   });
-  slider.addEventListener('touchend', (e) => {
-    e.preventDefault();
-    handler();
+  slider.addEventListener('touchend', () => {
+    mover();
   });
   slider.addEventListener('touchmove', (e) => {
     if (!pressed) return;

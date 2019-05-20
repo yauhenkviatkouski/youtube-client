@@ -52,6 +52,12 @@
   align-items: center;
   background-color: white;
   border-radius: 8px;
+  z-index: 100;
+}
+
+.clip:hover {
+  background-color: rgb(255, 220, 107);
+  cursor: pointer;
 }
 
 .clip-picture {
@@ -66,7 +72,7 @@
   margin-top: 50px;
   font-size: 1.3rem;
   background: rgba(230, 214, 0, 0.85);
-  z-index: 1;
+  z-index: 10000;
   text-align: center;
 }
 

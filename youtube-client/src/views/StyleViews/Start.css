@@ -16,21 +16,23 @@ body {
 header {
   width: 60%;
   position: relative;
-}
-
-header:before {
-  position: absolute;
-  top: 5px;
-  content: '\1F50E';
+  display: flex;
+  justify-content: center;
 }
 
 input {
-  width: 100%;
+  width: 60%;
   height: 25px;
-  padding: 0 25px;
+  padding: 0px 5px;
   background-color: rgb(230, 230, 230);
   border: solid 1px red;
   border-radius: 4px;
 }
+
+.btn-search {
+  margin: 0px 2px;
+  height: 27px;
+}
+
 
 
